@@ -28,7 +28,7 @@ class Student {
         this.#status = status
     } 
 
-    student1 = new Student(this.#id, this.#name)
-    console.log(student1)
+    student1 = new Student(1, 'Peeter')
+
 } 
 
