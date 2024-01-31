@@ -62,6 +62,62 @@ class Rectangle extends Shape {
     }   
 } 
 
+class Paint {
+    constructor() {
+        this.shapes = []  
+    } 
+
+    addShape(shape) {
+        this.shapes.push(shape)
+    } 
+
+    getShapes() {
+        return this.shapes
+    } 
+
+    getArea() {
+        return this.area
+    } 
+
+    calculateTotalArea() {
+        let sum = 0
+        for (let shape of this.shapes) {
+            sum += shape.getArea()
+        } 
+        return sum
+    } 
+
+    getCircles() {
+        let circles = []
+        for (let shape of this.shapes) {
+            if (shape instanceof Circle) {
+                circles.push(shape)
+            } 
+        } 
+        return circles 
+    } 
+
+    getSquares() {
+        let squares = []
+        for (let shape of this.shapes) {
+            if (shape instanceof Square) {
+                squares.push(shape)
+            } 
+        } 
+        return squares
+    } 
+
+    getRectangles() {
+        let rectangles = []
+        for (let shape of this.shapes) {
+            if (shape instanceof Rectangle) {
+                rectangles.push(shape)
+            } 
+        } 
+        return rectangles 
+    } 
+} 
+
 const shape1 = new Shape('Red')
 shape1.setColor('Green')
 //console.log(shape1)
@@ -78,6 +134,17 @@ const square1 = new Square('Pink', 8)
 //console.log(square1.print())
 
 const rectangle1 = new Rectangle('Purple', 10, 4)
-console.log(rectangle1)
-console.log(rectangle1.getArea())
-console.log(rectangle1.print())
+//console.log(rectangle1)
+//console.log(rectangle1.getArea())
+//console.log(rectangle1.print())
+
+const appender = new Paint();
+appender.addShape(circle1);
+appender.addShape(square1);
+appender.addShape(rectangle1);
+//console.log(appender.getShapes())
+//appender.calculateTotalArea()
+//console.log(appender.calculateTotalArea())
+//console.log(appender.getCircles())
+//console.log(appender.getSquares())
+console.log(appender.getRectangles())
