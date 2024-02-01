@@ -2,6 +2,13 @@ class Course {
     constructor(nimi) {
         this.nimi = nimi;
         this.grades = []  
+    }
+    
+    addGrade(student, grade) {
+        courseGrade = [] 
+        courseGrade.push(student)
+        courseGrade.push(grade)
+        this.grades.push(courseGrade)
     } 
 
     getGrades() {

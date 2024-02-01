@@ -15,6 +15,13 @@ class Student extends Person {
         return this.id
     } 
 
+    addGrade(course, grade) {
+        courseGrade = [] 
+        courseGrade.push(course)
+        courseGrade.push(grade)
+        this.grades.push(courseGrade)
+    } 
+
     getGrades() {
         return this.grades
     } 
