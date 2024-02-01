@@ -20,5 +20,4 @@ class Person {
     } 
 } 
 
-const person1 = new Person('Mati')
-console.log(person1)
+module.exports = Person;

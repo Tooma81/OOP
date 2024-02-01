@@ -1,3 +1,6 @@
+const Student = require('./Student')
+const Course = require('./Course')
+
 class School {
     constructor(name, students, courses) {
         this.name = name;
@@ -13,7 +16,7 @@ class School {
 
     addStudent(student) {
         if (!this.students.includes(student)) {
-            this.courses.push(student)
+            this.students.push(student)
             Student.setId(student)
         } 
     } 
@@ -31,16 +34,18 @@ class School {
         return this.courses
     } 
 
-    getStudentOrderedByAverageGrade() {
-        averageGrade = [] 
-        averageGrades = [] 
+    getStudentsOrderedByAverageGrade() {
+        const averageGrade = [] 
+        const averageGrades = [] 
         for (let student of this.students) {
             averageGrade.push(student)
             averageGrade.push(Student.getAverageGrade(student))
             averageGrades.push(averageGrade)
-            averageGrade = [] 
+            averageGrade.length = 0
         } 
         return averageGrades.slice().sort((a, b) => b[1] - a[1])
     } 
 
 } 
+
+module.exports = School;

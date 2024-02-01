@@ -1,29 +1,28 @@
 class Course {
+    static grades = []
+
     constructor(nimi) {
-        this.nimi = nimi;
-        this.grades = []  
+        this.nimi = nimi;      
     }
     
-    addGrade(student, grade) {
-        courseGrade = [] 
-        courseGrade.push(student)
-        courseGrade.push(grade)
-        this.grades.push(courseGrade)
+    static addGrade(student, grade) {
+        const courseGrade = [student, grade] 
+        Course.grades.push(courseGrade)
     } 
 
     getGrades() {
-        return this.grades
+        return Course.grades
     } 
 
-    getAverageGrade() {
+    static getAverageGrade() {
         let gradesSum = 0
-        if (this.grades = []) {
+        if (Course.grades.length === 0) {
             return -1
         } else {
-            for (let grade of this.grades) {
+            for (let grade of Course.grades) {
                 gradesSum += (grade[1])
             } 
-            return gradesSum / this.grades.lenght()
+            return gradesSum / Course.grades.length
         } 
     }
 
@@ -31,3 +30,5 @@ class Course {
         return this.name
     } 
 } 
+
+module.exports = Course;
