@@ -60,11 +60,11 @@ console.log("-".repeat(30))
 console.log(school.getStudentsOrderedByAverageGrade())
 console.log("-".repeat(30))
 school.getStudentsOrderedByAverageGrade().forEach((student) => {
-    console.log(student.name, Student.getAverageGrade())
+    console.log(Student.name, Student.getAverageGrade())
 })
         
 console.log()
 console.log("Course average grades")
 school.getCourses().forEach((course) => {
-    console.log(course.name, Course.getAverageGrade())
+    console.log(Course.name, Course.getAverageGrade())
 })

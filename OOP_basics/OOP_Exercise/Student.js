@@ -30,7 +30,7 @@ class Student extends Person {
 
     static getAverageGrade() {
         let gradesSum = 0
-        if (Student.grades.length === 0) {
+        if (Student.grades.lenght === 0) {
             return -1
         } else {
             for (let grade of Student.grades) {

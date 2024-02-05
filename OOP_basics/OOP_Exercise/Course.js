@@ -1,8 +1,8 @@
 class Course {
     static grades = []
 
-    constructor(nimi) {
-        this.nimi = nimi;      
+    constructor(name) {
+        this.name = name;      
     }
     
     static addGrade(student, grade) {

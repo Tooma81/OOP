@@ -35,17 +35,15 @@ class School {
     } 
 
     getStudentsOrderedByAverageGrade() {
-        const averageGrade = [] 
-        const averageGrades = [] 
+        const averageGrades = [];
+    
         for (let student of this.students) {
-            averageGrade.push(student)
-            averageGrade.push(Student.getAverageGrade(student))
-            averageGrades.push(averageGrade)
-            averageGrade.length = 0
-        } 
-        return averageGrades.slice().sort((a, b) => b[1] - a[1])
-    } 
-
+            const averageGrade = Student.getAverageGrade(student);
+            averageGrades.push([student, averageGrade]);
+        }
+    
+        return averageGrades.sort((a, b) => b[1] - a[1]);
+    }
 } 
 
 module.exports = School;
